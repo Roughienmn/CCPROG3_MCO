@@ -1,16 +1,18 @@
+package CCPROG3_MCO;
+
 public class Tool {
     private String name;
     private int cost;
     private double xp;
     private int tileRequirement;
-    private int tileChange; //tile type that tool makes it become
+    private int newTile; //tile type that the tool makes it become
 
-    public Tool(String name, int cost, double xp, int tileRequirement, int tileChange){
-        this.name = name;
+    public Tool(String name, int cost, double xp, int tileRequirement, int newTile){
+        this.name = name.toLowerCase();
         this.cost = cost;
         this.xp = xp;
         this.tileRequirement = tileRequirement;
-        this.tileChange = tileChange;
+        this.newTile = newTile;
     }
 
     public String getName(){
@@ -25,11 +27,11 @@ public class Tool {
         return this.xp;
     }
 
-    public int getTileRequirement(){
+    public int getTile(){
         return this.tileRequirement;
     }
 
-    public int getTileChange(){
-        return this.tileChange;
+    public int getNewTile(){
+        return this.newTile;
     }
 }
