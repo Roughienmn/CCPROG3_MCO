@@ -1,5 +1,5 @@
 package CCPROG3_MCO;
-
+import java.util.Random;
 public class Tile {
     private Plant plant = null;
     //0 - rock; 1 - unplowed; 2 - plowed; 3 - plant; 4 - withered;
@@ -9,6 +9,18 @@ public class Tile {
 
     public Tile(int status){
         this.status = status;
+    }
+
+    public void updateStatus(int status){
+        if(status == 1){
+            this.resetTile();
+        }
+        else if(status == 2){
+            this.plowTile();
+        }
+        else if(status == 4){
+            this.killPlant();
+        }
     }
 
     public void addPlant(Plant plant){
@@ -28,6 +40,8 @@ public class Tile {
     public void resetTile(){
         this.plant = null;
         this.status = 1;
+        this.water = 0;
+        this.fertilizer = 0;
     }
 
     public void plowTile(){
@@ -56,7 +70,7 @@ public class Tile {
         }
         return false;
     }
-
+    
     public boolean hasPlant(){
         if(this.plant != null){
             return true;
@@ -80,7 +94,11 @@ public class Tile {
         return this.water;
     }
 
-    public int fertilizer(){
+    public int getFertilizer(){
         return this.fertilizer;
+    }
+
+    public Plant getPlant(){
+        return this.plant;
     }
 }

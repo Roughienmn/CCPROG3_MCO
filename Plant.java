@@ -1,4 +1,5 @@
 package CCPROG3_MCO;
+import java.util.Random;
 
 public class Plant {
     private String name;
@@ -12,9 +13,11 @@ public class Plant {
     private int sellPrice;
     private double xp;
     private int growth = 1;
+    private String type;
 
     private String nameArr[] = {"Turnip", "Carrot", "Potato", "Rose", "Tulips", "Sunflower", "Mango", "Apple"};
     private int harvestTimeArr[] = {2, 3, 5, 1, 2, 3, 10, 10};
+    private String typeArr[] = {"root", "root", "root", "flower", "flower", "flower", "tree", "tree"};
     private int waterNeedsArr[] = {1, 1, 3, 1, 2, 2, 7, 7};
     private int fertilizerNeedsArr[] = {0, 0, 1, 0, 0, 1, 4, 5};
     private int lowerLimitArr[] = {1, 1, 1, 1, 1, 1, 5, 10};
@@ -43,6 +46,7 @@ public class Plant {
         this.cost = this.costArr[index];
         this.sellPrice = priceArr[index];
         this.xp = xpArr[index];
+        this.type = typeArr[index];
     }
 
     public void growPlant(){
@@ -85,7 +89,7 @@ public class Plant {
         return this.cost;
     }
 
-    public int getPrice(){
+    public int getSellPrice(){
         return this.sellPrice;
     }
 
@@ -93,8 +97,17 @@ public class Plant {
         return this.xp;
     }
 
+    public int getProduce(){
+        Random rand = new Random();
+        return rand.nextInt(this.prodUpperLimit-this.prodLowerLimit) + this.prodLowerLimit;
+    }
+
     public int getGrowth(){
         return this.growth;
+    }
+
+    public String getType(){
+        return this.type;
     }
 }
 
