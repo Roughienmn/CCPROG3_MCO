@@ -72,10 +72,6 @@ public class Tile {
         return this.crop;
     }
 
-    public String getCropName(){
-        return this.crop.getName();
-    }
-
     public int getWater(){
         return this.water;
     }

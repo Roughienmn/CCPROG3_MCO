@@ -32,4 +32,12 @@ public class Tool {
     public int getTileChange(){
         return this.tileChange;
     }
+
+    public boolean canUseOnTile(Tile tile){
+        if(tile.getStatus() == this.tileRequirement) return true;
+        if(this.name.equals("Shovel")){
+            if(tile.getStatus() == 0 || tile.getStatus() == 1 || tile.getStatus() == 3 || tile.getStatus() == 4) return true;
+        }
+        return false;
+    }
 }
