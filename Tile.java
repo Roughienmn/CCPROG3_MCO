@@ -58,11 +58,11 @@ public class Tile {
     }
 
     public void addWater(){
-        this.water++;
+        if(this.status > 1) this.water++;
     }
 
     public void addFertilizer(){
-        this.fertilizer++;
+        if(this.status > 1) this.fertilizer++;
     }
 
     public int getStatus(){

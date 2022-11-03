@@ -43,9 +43,18 @@ public class Driver {
                             g.useTool(row, col, toolInput);
                         }
                         else if(choice1.equals("P")){
-                            g.displayCropOptions(row, col);
-                            String seedIndex = input.nextLine();
-                            g.plantSeed(row, col, g.generateSeed(seedIndex));
+                            int allowed = g.displayCropOptions(row, col);
+                            if(allowed == 1){
+                                String seedIndex = input.nextLine();
+                                int result = g.plantSeed(row, col, g.generateSeed(seedIndex));
+                                if(result == 0){
+                                    System.out.println("Planting was not successful.");
+                                }
+                                else{
+                                    System.out.println("Planting was successful.");
+                                }
+                            }
+                            else System.out.println("Cannot plant there. ");
                         }
                         else if(choice1.equals("H")){
                             g.harvestTile(row, col);

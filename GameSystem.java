@@ -85,8 +85,10 @@ public class GameSystem {
             farmer.addXp(crop.getXp());
             tile.resetTile();
 
+            System.out.println("Successfully harvested. " + produce + " " + crop.getName() + " was/were harvested.");
             return 1; //tile harvest successful
         }
+        System.out.println("Harvest unsuccessful.");
         return 0; //not successful
     }
 
@@ -146,7 +148,7 @@ public class GameSystem {
         if(col != 1 && col != 5 && row != 1 && row != 10){ //not corner and not far side
             for(int i = -1; i < 2; i++){
                 for(int j = -1; j < 2; j++){
-                    int tileStatus = farm.getTile(row+i, col+j).getStatus();
+                    int tileStatus = this.getTileStatus(row+i, col+j);
                     if(tileStatus != 1 && tileStatus != 2) return false; //has a surrounding tile thats occupied
                 }
             }
@@ -225,7 +227,7 @@ public class GameSystem {
             for(int y = 1; y <= 5; y++){
                 Tile t = farm.getTile(x, y);
                 String s = "-";
-                if(t.getStatus() == 3){
+                if(t.getStatus() == 3 || t.getStatus() == 4){
                     s = t.getCrop().getIndex();
                 }
                 System.out.print(" " + s + " |");
@@ -262,25 +264,33 @@ public class GameSystem {
         this.inputPrompt();
     }
 
-    public void displayCropOptions(int row, int col){ //display plantable crops w/ cost based on tile
-        System.out.println("\n[SELECT A CROP TO PLANT]");
-        for(Crop c : this.cropList){
-            if(!c.getType().equals("Fruit Tree")){
-                System.out.println("[" + c.getIndex() + "] " + c.getName() + "(¢" + c.getSeedCost() + ")");
-            }
-            else{
-                if(treePlantable(row, col)){
+    public int displayCropOptions(int row, int col){ //display plantable crops w/ cost based on tile
+        if(this.getTileStatus(row, col) == 2){
+            System.out.println("\n[SELECT A CROP TO PLANT]");
+            for(Crop c : this.cropList){
+                if(!c.getType().equals("Fruit Tree")){
                     System.out.println("[" + c.getIndex() + "] " + c.getName() + "(¢" + c.getSeedCost() + ")");
                 }
+                else{
+                    if(treePlantable(row, col)){
+                        System.out.println("[" + c.getIndex() + "] " + c.getName() + "(¢" + c.getSeedCost() + ")");
+                    }
+                }
             }
+            this.inputPrompt();
+            return 1;
         }
-        this.inputPrompt();
+        return 0;
     }
 
     public void displayFarmerOptions(){ //register farmer, see more farmer details
         System.out.println("\n[FARMER OPTIONS]");
         System.out.println("[1] Register Farmer");
         System.out.println("[2] Display More Farmer Stats");
+    }
+
+    public int getTileStatus(int row, int col){
+        return this.farm.getTile(row, col).getStatus();
     }
 
     public void displayFarmerStats(){
