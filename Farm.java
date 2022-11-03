@@ -3,7 +3,8 @@ import java.util.ArrayList;
 public class Farm {
     public ArrayList<Tile> tileList;
 
-    public Farm(ArrayList<Integer> status){
+    public Farm(int status[]){
+        tileList = new ArrayList<Tile>();
         for(int i : status){
             this.tileList.add(new Tile(i));
         }

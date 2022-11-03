@@ -4,13 +4,15 @@ public class Tool {
     private double xp;
     private int tileRequirement;
     private int tileChange; //tile type that tool makes it become
+    private String index;
 
-    public Tool(String name, int cost, double xp, int tileRequirement, int tileChange){
+    public Tool(String name, int cost, double xp, int tileRequirement, int tileChange, String index){
         this.name = name;
         this.cost = cost;
         this.xp = xp;
         this.tileRequirement = tileRequirement;
         this.tileChange = tileChange;
+        this.index = index;
     }
 
     public String getName(){
@@ -31,6 +33,10 @@ public class Tool {
 
     public int getTileChange(){
         return this.tileChange;
+    }
+
+    public String getIndex(){
+        return this.index;
     }
 
     public boolean canUseOnTile(Tile tile){

@@ -35,6 +35,7 @@ public class Tile {
     }
 
     public boolean isHarvestable(){
+        if(this.crop == null) return false;
         if(this.crop.getDaysAlive() == this.crop.getHarvestTime()) return true;
         return false;
     }

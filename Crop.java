@@ -13,9 +13,10 @@ public class Crop {
     private double xp;
     private int growth; //days in ground
     private String type;
+    private String index;
 
     public Crop(String name, String type, int harvestTime, int water, int fertilizer, int bonusLimit, int prodMin,
-                int prodMax, int seedCost, int sellPrice, double xp){
+                int prodMax, int seedCost, int sellPrice, double xp, String index){
         this.name = name;
         this.harvestTime = harvestTime;
         this.water = water;
@@ -28,6 +29,7 @@ public class Crop {
         this.xp = xp;
         this.growth = 0;
         this.type = type;
+        this.index = index;
     }
 
     public void grow(){
@@ -90,5 +92,9 @@ public class Crop {
 
     public String getType(){
         return this.type;
+    }
+    
+    public String getIndex(){
+        return this.index;
     }
 }
