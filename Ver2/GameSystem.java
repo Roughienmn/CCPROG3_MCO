@@ -244,7 +244,7 @@ public class GameSystem {
     }
 
     public void inputPrompt(){
-        System.out.print("\n\nInput: ");
+        System.out.print("\nInput: ");
     }
 
     public void displayFarm(){
