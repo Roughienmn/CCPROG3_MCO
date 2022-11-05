@@ -1,5 +1,3 @@
-
-
 public class Tool {
     private String name; //bruh
     private char id; //index/id 

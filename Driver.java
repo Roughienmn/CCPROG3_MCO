@@ -1,5 +1,3 @@
-
-
 import java.util.Scanner;
 
 public class Driver {
@@ -18,7 +16,7 @@ public class Driver {
                         0, 0, 1, 1, 1};
 
         while(!exit){
-        System.out.println("My Farm");
+        System.out.println("\nMy Farm");
         System.out.println("[1] Start");
         System.out.println("[2] Exit");
         System.out.print("\nInput: ");
