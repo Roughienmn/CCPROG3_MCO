@@ -1,5 +1,7 @@
 package CCPROG3_MCO;
 
+import java.util.ArrayList;
+
 public class GameSystem {    
     private ArrayList<Crop> cropList = new ArrayList<Crop>(); //list of crops/crop data
     private Farmer farmer; //farmer
