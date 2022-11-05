@@ -3,12 +3,13 @@ package Ver2;
 import java.util.ArrayList;
 
 public class GameSystem {    
-    private ArrayList<Crop> cropList = new ArrayList<Crop>();
-    private Farmer farmer;
-    private Farm farm;
-    private int day;
+    private ArrayList<Crop> cropList = new ArrayList<Crop>(); //list of crops/crop data
+    private Farmer farmer; //farmer
+    private Farm farm; //farm
+    private int day; //days active
 
     public GameSystem(int status[]){
+        //add crop info to crop list
         this.cropList.add(new Crop("Turnip", 'T', "Root", 2, 1, 0, 1, 1, 2, 5, 6, 5.0));
         this.cropList.add(new Crop("Carrot", 'C', "Root", 3, 1, 0, 1, 1, 2, 10, 9, 7.5));
         this.cropList.add(new Crop("Potato", 'P', "Root", 5, 3, 1, 1, 1, 10, 20, 3, 12.5));
@@ -22,6 +23,7 @@ public class GameSystem {
         this.farm = new Farm(status);
         this.day = 1;
 
+        //add tools to farmer inventory
         this.farmer.addTool(new Tool("Plow", 'P', 0, 0.5, 1, 2));
         this.farmer.addTool(new Tool("Watering Can", 'W', 0, 0.5, 3, 3));
         this.farmer.addTool(new Tool("Fertilizer", 'F', 10, 4, 3, 3));
@@ -29,6 +31,7 @@ public class GameSystem {
         this.farmer.addTool(new Tool("Shovel", 'S', 7, 2, 4, 1));
     }
 
+    //generates new seed for planting
     public Crop generateSeed(char id){
         for(Crop c: this.cropList){
             if(c.getID() == id){
@@ -39,42 +42,45 @@ public class GameSystem {
         return null;
     }
 
+    //checks if tree can be planted on the tile
     public boolean treePlantable(int row, int col){
         if(col != 1 && col != 5 && row != 1 && row != 10){ //not corner and not far side
-            for(int i = -1; i < 2; i++){
-                for(int j = -1; j < 2; j++){
-                    int tileStatus = this.farm.getTile(row+i, col+j).getStatus();
+            for(int i = -1; i < 2; i++){ //row above, below, and current
+                for(int j = -1; j < 2; j++){ //column to left, right, and current
+                    int tileStatus = this.farm.getTile(row+i, col+j).getStatus(); //gets status of tile
                     if(tileStatus != 1 && tileStatus != 2) return false; //has a surrounding tile thats occupied
                 }
             }
-            return true;
+            return true; //can plant tree in tile
         }
-        return false;
+        return false; //cant plant tree in tile
     }
 
+    //plants seed on tile given row, col, and seed id
     public void plantSeed(int row, int col, char id){
-        Crop seed = generateSeed(id);
+        Crop seed = generateSeed(id); //generates seed
         Tile tile = this.farm.getTile(row, col);
-        if(seed != null && tile != null){
+        if(seed != null && tile != null){ //both seed and tile were within bounds
             int result = 0;
             String s = "";
 
-            if(seed.getType() != "Fruit Tree" || (seed.getType() == "Fruit Tree" && this.treePlantable(row, col))){
+            if(seed.getType() != "Fruit Tree" || (seed.getType() == "Fruit Tree" && this.treePlantable(row, col))){ //seed is not a fruit tree or is and the tile is tree plantable
                 result = this.farmer.plantSeed(seed, tile);
             }
 
             if (result == 0) s = "not ";
 
-            System.out.println("Planting of " + seed.getName()+ " was " + s + "successful.");
+            System.out.println("Planting of " + seed.getName()+ " was " + s + "successful."); //display result
             if(result == 1){
                 System.out.println("Tile will be harvestable in " + seed.getHarvestTime() + " days. (Day " + (day + seed.getHarvestTime()) + ")");
                 System.out.println("The tile will need " + seed.getWater() + " GALLONS of water and " + seed.getFertilizer() + " METRIC TONS of fertilizer.");
             }
         }
         if(tile == null) System.out.println("Tile is out of bounds.");
-        if(seed == null) System.out.println("We don't have that seed.");
+        if(seed == null && id != 'X') System.out.println("We don't have that seed.");
     }
 
+    //harvests tile
     public void harvestTile(int row, int col){
         Tile tile = this.farm.getTile(row, col);
         if(tile != null){
@@ -88,27 +94,29 @@ public class GameSystem {
         }
     }
 
+    //uses tool on tile given row and col of tile and id of tool
     public void useTool(int row, int col, char id){
         Tile tile = this.farm.getTile(row, col);
         Tool tool = this.farmer.getTool(id);
         if(tool != null){
             int result = this.farmer.useTool(id, tile);
-            if(result > 0){
+            if(result > 0){ //use of tool was successful
                 System.out.println(tool.getName() + " was used on Tile (" + row + ", " + col + ").");
-                if(tool.getID() == 'W'){
+                if(tool.getID() == 'W'){ //if tool was watering can, show new water level
                     System.out.println("Tile Water Level: " + tile.getWater());
                 }
-                if(tool.getID() == 'F'){
+                if(tool.getID() == 'F'){ //if tool was fertilizer, show new fertilizer level
                     System.out.println("Tile Fertilizer Level: " + tile.getFertilizer());
                 }
             }
-            else{
+            else{ //use of tool was not successful
                 System.out.println(tool.getName() + " was not able to be used.");
             }
         }
-        else System.out.println("We don't have that tool.");
+        else if(id != 'X') System.out.println("We don't have that tool."); //given tool id did not have tool assigned to it
     }
 
+    //registers farmer for next farmer type
     public void registerFarmer(){
         int nextType = this.farmer.getRegistration();
         int result = this.farmer.registerForLevel(nextType);
@@ -119,25 +127,28 @@ public class GameSystem {
         else System.out.println("Registration was unsuccessful.");
     }
 
+    //updates farm and day for next day
     public void nextDay(){
         this.farm.nextDay();
         this.day++;
     }
 
+    //checks if game over requirements are reached
     public boolean checkGameOver(){
         int farmStatus = this.farm.getFarmStatus();
         if(farmStatus == 2){ //all withered
-            if(!this.farmer.canAfford(this.farmer.getTool('S').getCost())) return true;
+            if(!this.farmer.canAfford(this.farmer.getTool('S').getCost())) return true; //all withered and cant afford using a shovel
         }
-        if(farmStatus == 1){
-            if(!this.farmer.canAfford(cropList.get(1).getSeedCost() - this.farmer.getCostReduction())) return true;
+        if(farmStatus == 1){ //no active crop
+            if(!this.farmer.canAfford(cropList.get(0).getSeedCost() - this.farmer.getCostReduction())) return true; //no crops are active and cant afford turnip (cheapest root)
         }
         return false;
     }
 
-    public void displayToolOptions(int row, int col){ //usable tools based on tile status
-        Tile tile = this.farm.getTile(row, col);
-        if(tile != null){
+    //displays usable tools based on tile status
+    public void displayToolOptions(int row, int col){
+        Tile tile = this.farm.getTile(row, col); //get tile
+        if(tile != null){ //tile exists
             System.out.println("\n[TOOL OPTIONS]");
             for(Tool t: this.farmer.getToolList()){
                 if(t.tileCompatible(tile)) System.out.println("[" + t.getID() + "] " + t.getName() + " ($" + t.getCost() + ")");
@@ -147,13 +158,14 @@ public class GameSystem {
         }
     }
 
-    public void displayCropOptions(int row, int col){ //plantable crop name w/ cost
+    //displays plantable crop name w/ cost
+    public void displayCropOptions(int row, int col){
         Tile tile = this.farm.getTile(row, col);
         if(tile != null){
             System.out.println("\n[CROP OPTIONS]");
             for(Crop c : this.cropList){
                 if(tile.getStatus() == 2){
-                    if(!c.getType().equals("Fruit Tree") || this.treePlantable(row, col)){
+                    if(this.farmer.canAfford(c.getSeedCost()) && (!c.isTree() || this.treePlantable(row, col))){
                         System.out.println("[" + c.getID() + "] " + c.getName() + " ($" + c.getSeedCost() + ")");
                     }
                 }
@@ -163,6 +175,7 @@ public class GameSystem {
         }
     }
 
+    //displays info of tile
     public void displayTileInfo(int row, int col){
         Tile tile = this.farm.getTile(row, col);
         if(tile != null){
@@ -186,6 +199,7 @@ public class GameSystem {
                     break;
                 
             }
+            System.out.println("\n[TILE INFO] (" + row + ", " + col + ")");
             System.out.println("Status: " + s);
             if(tile.getStatus() > 2) {
                 System.out.println("Crop: " + tile.getCrop().getName());
@@ -195,8 +209,8 @@ public class GameSystem {
         }
     }
     
-
-    public void selectTileOptions(int row, int col){ //use tool, plant, harvest, tile info
+    //displays tile options (use tool, plant, harvest, tile info)
+    public void selectTileOptions(int row, int col){ 
         Tile tile = this.farm.getTile(row, col);
         if(tile != null){   
             System.out.println("\n[TILE OPTIONS]");
@@ -235,6 +249,7 @@ public class GameSystem {
         System.out.println(" | Day: " + this.day);
     }
 
+    //displays main options
     public void displayMainOptions(){
         System.out.println("\n[ACTIONS]");
         System.out.println("[1] Select Tile");
@@ -243,10 +258,11 @@ public class GameSystem {
         this.inputPrompt();
     }
 
-    public void inputPrompt(){
+    public void inputPrompt(){ //input prompt
         System.out.print("\nInput: ");
     }
 
+    //displays whole farm in 5 columns
     public void displayFarm(){
         int tileCount = this.farm.getTileCount();
         int rows = tileCount/5;

@@ -6,7 +6,16 @@ public class Driver {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
-        int status[] = {1};
+        int status[] = {1, 1, 1, 1, 1,
+                        1, 1, 1, 1, 1,
+                        1, 1, 1, 1, 1,
+                        1, 1, 1, 1, 1,
+                        1, 1, 1, 1, 1,
+                        0, 1, 1, 0, 1,
+                        1, 1, 1, 1, 0,
+                        1, 1, 0, 1, 0,
+                        1, 1, 0, 1, 1,
+                        0, 0, 1, 1, 1};
 
         while(!exit){
         System.out.println("My Farm");
@@ -70,11 +79,13 @@ public class Driver {
                     
                     gameOver = g.checkGameOver();
                 }
+                System.out.println("\nGame over.\n");
             }
             else if(choice == 2){
                 exit = true;
             }
         }
+        System.out.println("\nClosing Game...");
         scanner.close();
     }
 }

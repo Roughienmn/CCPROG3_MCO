@@ -5,18 +5,18 @@ import java.util.Random;
 public class Crop {
     private String name; //name
     private char id; //single char id "code"
-    private String type; 
+    private String type; //type of crop
     private int harvestTime; //in days
-    private int water;
-    private int fertilizer;
-    private int bonus; //
-    private int prodMin;
-    private int prodMax;
-    private int seedCost;
-    private int sellPrice;
-    private double xp;
+    private int water; //water requirements of crop
+    private int fertilizer; //fertilizer requirements
+    private int bonus; //bonus limit
+    private int prodMin; //minimum produce
+    private int prodMax; //maxmimum produce
+    private int seedCost; //cost of seed
+    private int sellPrice; //income from crop
+    private double xp; //xp gain from crop
     private int growth; //days since planting
-    private boolean tree;
+    private boolean tree; //is crop a tree
 
     public Crop(String name, char id, String type, int harvestTime, int water, int fertilizer, int bonus,
                 int prodMin, int prodMax, int seedCost, int sellPrice, double xp){
@@ -45,7 +45,7 @@ public class Crop {
         this.growth = -1;
     }
 
-    public String getName(){
+    public String getName(){ //returns name of plant
         return this.name;
     }
 
@@ -57,19 +57,19 @@ public class Crop {
         return this.type;
     }
 
-    public int getHarvestTime(){
+    public int getHarvestTime(){ //returns days required before harvesting
         return this.harvestTime;
     }
 
-    public int getWater(){
+    public int getWater(){ //returns water needs
         return this.water;
     }
 
-    public int getFertilizer(){
+    public int getFertilizer(){ //returns fertilizer needs
         return this.fertilizer;
     }
 
-    public int getWaterLimit(){
+    public int getWaterLimit(){ //returns cap for bonus
         return this.water + this.bonus;
     }
 
@@ -77,41 +77,41 @@ public class Crop {
         return this.fertilizer + this.bonus;
     }
 
-    public int getSeedCost(){
+    public int getSeedCost(){ //returns seed cost
         return this.seedCost;
     }
 
-    public int getSellPrice(){
+    public int getSellPrice(){ //returns sell price
         return this.sellPrice;
     }
 
-    public double getXp(){
+    public double getXp(){ //returns crop xp gain
         return this.xp;
     }
 
-    public int getGrowth(){
+    public int getGrowth(){ //returns current crop growth
         return this.growth;
     }
 
     public int generateProduce(){ //return number of produce between specified range
         Random rand = new Random();
 
-        return rand.nextInt(this.prodMax - this.prodMin) + this.prodMin;
+        return (rand.nextInt(this.prodMax - this.prodMin) + this.prodMin);
     }
 
-    public boolean isTree(){
+    public boolean isTree(){ //returns if the the crop is a tree
         return tree;
     }
 
-    public int getBonus(){
+    public int getBonus(){ //returns bonus limit
         return this.bonus;
     }
 
-    public int getProdMin(){
+    public int getProdMin(){ //returns minimum amount of produce
         return this.prodMin;
     }
 
-    public int getProdMax(){
+    public int getProdMax(){ //returns maximum amount of produce
         return this.prodMax;
     }
 }
