@@ -1,4 +1,4 @@
-package CCPROG3_MCO;
+
 
 public class Tool {
     private String name; //bruh
