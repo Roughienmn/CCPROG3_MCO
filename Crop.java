@@ -1,4 +1,4 @@
-package Ver2;
+package CCPROG3_MCO;
 
 import java.util.Random;
 

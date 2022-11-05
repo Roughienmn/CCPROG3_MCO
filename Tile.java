@@ -1,4 +1,4 @@
-package Ver2;
+package CCPROG3_MCO;
 
 public class Tile {
     private int water; //tile water level
