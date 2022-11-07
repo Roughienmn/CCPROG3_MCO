@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * This driver runs the entire game and gets all user input.
+ */
 public class Driver {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
