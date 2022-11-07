@@ -1,5 +1,8 @@
 import java.util.Random;
 
+/**
+ * 
+ */
 public class Crop {
     private String name; //name
     private char id; //single char id "code"
