@@ -1,5 +1,4 @@
-import Tile;
-
+import Farm.Tile;
 package Tool;
 public abstract class Tool {
     protected String name; //bruh
@@ -20,6 +19,9 @@ public abstract class Tool {
             if(this.name.equals("Watering Can") || this.name.equals("Fertilizer")) return true;
         }
         return false;
+    }
+
+    public void toolFunction (Tile tile) {
     }
 
     //returns tool name

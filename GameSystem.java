@@ -1,6 +1,16 @@
 import java.util.ArrayList;
 
+import Crop.Carrot;
 import Crop.Crop;
+import Crop.Mango;
+import Crop.Potato;
+import Crop.Rose;
+import Crop.Sunflower;
+import Crop.Tulips;
+import Crop.Turnip;
+import Crop.Apple;
+import Farm.Farm;
+import Farm.Tile;
 import Farmer.Farmer;
 import Tool.Fertilizer;
 import Tool.Pickaxe;
@@ -22,14 +32,7 @@ public class GameSystem {
 
     public GameSystem(int status[]){
         //add crop info to crop list
-        this.cropList.add(new Crop("Turnip", 'T', "Root", 2, 1, 0, 1, 1, 2, 5, 6, 5.0));
-        this.cropList.add(new Crop("Carrot", 'C', "Root", 3, 1, 0, 1, 1, 2, 10, 9, 7.5));
-        this.cropList.add(new Crop("Potato", 'P', "Root", 5, 3, 1, 1, 1, 10, 20, 3, 12.5));
-        this.cropList.add(new Crop("Rose", 'R', "Flower", 1, 1, 0, 1, 1, 1, 5, 5, 2.5));
-        this.cropList.add(new Crop("Tulips", 'L', "Flower", 2, 2, 0, 1, 1, 1, 10, 9, 5));
-        this.cropList.add(new Crop("Sunflower", 'S', "Flower", 3, 2, 1, 1, 1, 1, 20, 19, 7.5));
-        this.cropList.add(new Crop("Mango", 'M', "Fruit Tree", 10, 7, 4, 0, 5, 15, 100, 8, 25));
-        this.cropList.add(new Crop("Apple", 'A', "Fruit Tree", 10, 7, 5, 0, 10, 15, 200, 5, 25));
+        this.cropList = new ArrayList<Crop>();
 
         this.farmer = new Farmer();
         this.farm = new Farm(status);
@@ -46,9 +49,16 @@ public class GameSystem {
     //generates new seed for planting
     public Crop generateSeed(char id){
         for(Crop c: this.cropList){
-            if(c.getID() == id){
-                Crop seed = new Crop(c.getName(), c.getID(), c.getType(), c.getHarvestTime(), c.getWater(), c.getFertilizer(),c.getBonus(), c.getProdMin(), c.getProdMax(), c.getSeedCost(), c.getSellPrice(), c.getXp());
-                return seed;
+            Crop seed;
+            switch (c.getID()){
+                case 'T':  seed = new Turnip(); return seed;
+                case 'C': seed = new Carrot(); return seed;
+                case 'P':  seed = new Potato(); return seed;
+                case 'R': seed = new Rose(); return seed;
+                case 'L':  seed = new Tulips(); return seed;
+                case 'S': seed = new Sunflower(); return seed;
+                case 'M':  seed = new Mango(); return seed;
+                case 'A': seed = new Apple(); return seed;
             }
         }
         return null;
@@ -125,7 +135,7 @@ public class GameSystem {
                 System.out.println(tool.getName() + " was not able to be used.");
             }
         }
-        else if(id != 'X') System.out.println("We don't have that tool."); //given tool id did not have tool assigned to it
+        else if(id != 'X') System.out.println("Please input a valid tool ID."); //given tool id did not have tool assigned to it
     }
 
     //registers farmer for next farmer type

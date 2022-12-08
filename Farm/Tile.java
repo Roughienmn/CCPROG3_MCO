@@ -1,3 +1,4 @@
+package Farm;
 import Crop.Crop;
 
 public class Tile {
@@ -49,12 +50,12 @@ public class Tile {
 
     //add water to tile if tile is plowed 
     public void addWater(){
-        if(this.status > 1) this.water++;
+        this.water++;
     }
 
     //add water to tile if tile is plowed 
     public void addFertilizer(){
-        if(this.status > 1) this.fertilizer++;
+        this.fertilizer++;
     }
 
     //set status of tile

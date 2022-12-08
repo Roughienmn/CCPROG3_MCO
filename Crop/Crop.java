@@ -2,38 +2,23 @@ package Crop;
 import java.util.Random;
 
 public abstract class Crop {
-    private String name; //name
-    private char id; //single char id "code"
-    private String type; //type of crop
-    private int harvestTime; //in days
-    private int water; //water requirements of crop
-    private int fertilizer; //fertilizer requirements
-    private int bonus; //bonus limit
-    private int prodMin; //minimum produce
-    private int prodMax; //maxmimum produce
-    private int seedCost; //cost of seed
-    private int sellPrice; //income from crop
-    private double xp; //xp gain from crop
-    private int growth; //days since planting
-    private boolean tree; //is crop a tree
+    protected String name; //name
+    protected char id; //single char id "code"
+    protected String type; //type of crop
+    protected int harvestTime; //in days
+    protected int water; //water requirements of crop
+    protected int fertilizer; //fertilizer requirements
+    protected int bonus; //bonus limit
+    protected int prodMin; //minimum produce
+    protected int prodMax; //maxmimum produce
+    protected int seedCost; //cost of seed
+    protected int sellPrice; //income from crop
+    protected double xp; //xp gain from crop
+    protected int growth; //days since planting
+    protected boolean tree; //is crop a tree
 
-    public Crop(String name, char id, String type, int harvestTime, int water, int fertilizer, int bonus,
-                int prodMin, int prodMax, int seedCost, int sellPrice, double xp){
-        this.name = name;
-        this.id = id;
-        this.type = type;
-        this.harvestTime = harvestTime;
-        this.water = water;
-        this.fertilizer = fertilizer;
-        this.bonus = bonus;
-        this.prodMin = prodMin;
-        this.prodMax = prodMax;
-        this.seedCost = seedCost;
-        this.sellPrice = sellPrice;
-        this.xp = xp;
+    public Crop(){
         this.growth = 0;
-        if(type.equals("Fruit Tree")) tree = true;
-        else tree = false;
     }
 
     public void grow(){ //add day to growth

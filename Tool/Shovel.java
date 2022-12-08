@@ -1,4 +1,6 @@
 package Tool;
+
+import Farm.Tile;
 public class Shovel extends Tool {
     public Shovel () {
         super();
@@ -9,5 +11,10 @@ public class Shovel extends Tool {
         super.xp = 2;
         super.tileReq = 4;
         super.tileChange = 1;
+    }
+
+    @Override 
+    public void toolFunction(Tile tile){
+        tile.resetTile();
     }
 }

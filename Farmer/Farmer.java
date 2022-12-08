@@ -1,9 +1,15 @@
 package Farmer;
 import java.util.ArrayList;
 
-import Tile;
 import Crop.Crop;
+import Farm.Tile;
 import Tool.Tool;
+import Tool.Fertilizer;
+import Tool.Pickaxe;
+import Tool.Plow;
+import Tool.Shovel;
+import Tool.WateringCan;
+
 
 public abstract class Farmer {
     private ArrayList<Tool> toolList; //tool list inventory
@@ -17,6 +23,12 @@ public abstract class Farmer {
     private int costReduction; //farmer seed cost reduction
     private String regName; //farmer registration "descriptor"
 
+    private WateringCan wateringcan;
+    private Fertilizer fertilizer;
+    private Plow plow;
+    private Pickaxe pickaxe;
+    private Shovel shovel;
+
     public Farmer(){
         this.xp = 0;
         this.level = 0;
@@ -28,10 +40,16 @@ public abstract class Farmer {
         this.costReduction = 0;
         this.toolList = new ArrayList<Tool>();
         this.regName = "";
+
+        this.wateringcan = new WateringCan();
+        this.fertilizer = new Fertilizer();
+        this.plow = new Plow();
+        this.pickaxe = new Pickaxe();
+        this.shovel = new Shovel();
     }
 
     //gets specific tool
-    public Tool -getTool(char id){
+    public Tool getTool(char id){
         for(Tool t: this.toolList){
             if(t.getID() == id) return t;
         }
@@ -51,16 +69,19 @@ public abstract class Farmer {
             this.addXp(tool.getXp());
 
             if(id == 'P'){ //if plow, set tile status to plowed
-                tile.setStatus(2);
+                this.plow.toolFunction(tile);
             }
             if(id == 'W'){ //if tile is watered, add water to tile
-                tile.addWater();
+                this.wateringcan.toolFunction(tile);
             }
             if(id == 'F'){ //if fertilizer is used, add fertilizer to tile
-                tile.addFertilizer();
+                this.fertilizer.toolFunction(tile);
             }
-            if(id == 'S' || id == 'A'){ //shovel and pickaxes set tile to unplowed with no water and fertilizer
-                tile.resetTile();
+            if(id == 'S'){ //shovel and pickaxes set tile to unplowed with no water and fertilizer
+                this.shovel.toolFunction(tile);
+            }
+            if(id == 'A'){ //shovel and pickaxes set tile to unplowed with no water and fertilizer
+                this.pickaxe.toolFunction(tile);
             }
             return 1;
         }
