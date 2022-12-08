@@ -1,3 +1,5 @@
+import Crop.Crop;
+
 public class Tile {
     private int water; //tile water level
     private int fertilizer; //tile fertilizer level

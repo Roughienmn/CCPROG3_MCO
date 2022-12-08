@@ -1,10 +1,24 @@
 import java.util.ArrayList;
 
+import Crop.Crop;
+import Farmer.Farmer;
+import Tool.Fertilizer;
+import Tool.Pickaxe;
+import Tool.Plow;
+import Tool.Tool;
+import Tool.WateringCan;
+import Tool.Shovel;
+
 public class GameSystem {    
     private ArrayList<Crop> cropList = new ArrayList<Crop>(); //list of crops/crop data
     private Farmer farmer; //farmer
     private Farm farm; //farm
     private int day; //days active
+    private WateringCan wateringcan;
+    private Fertilizer fertilizer;
+    private Plow plow;
+    private Pickaxe pickaxe;
+    private Shovel shovel;
 
     public GameSystem(int status[]){
         //add crop info to crop list
@@ -22,11 +36,11 @@ public class GameSystem {
         this.day = 1;
 
         //add tools to farmer inventory
-        this.farmer.addTool(new Tool("Plow", 'P', 0, 0.5, 1, 2));
-        this.farmer.addTool(new Tool("Watering Can", 'W', 0, 0.5, 3, 3));
-        this.farmer.addTool(new Tool("Fertilizer", 'F', 10, 4, 3, 3));
-        this.farmer.addTool(new Tool("Pickaxe", 'A', 50, 15, 0, 1));
-        this.farmer.addTool(new Tool("Shovel", 'S', 7, 2, 4, 1));
+        wateringcan = new WateringCan();
+        fertilizer = new Fertilizer();
+        plow = new Plow();
+        pickaxe = new Pickaxe();
+        shovel = new Shovel();
     }
 
     //generates new seed for planting
@@ -75,7 +89,7 @@ public class GameSystem {
             }
         }
         if(tile == null) System.out.println("Tile is out of bounds.");
-        if(seed == null && id != 'X') System.out.println("We don't have that seed.");
+        if(seed == null && id != 'X') System.out.println("We don't have that seed.") ;
     }
 
     //harvests tile

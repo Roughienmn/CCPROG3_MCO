@@ -1,6 +1,11 @@
+package Farmer;
 import java.util.ArrayList;
 
-public class Farmer {
+import Tile;
+import Crop.Crop;
+import Tool.Tool;
+
+public abstract class Farmer {
     private ArrayList<Tool> toolList; //tool list inventory
     private double xp; //farmer xp
     private int level; //farmer level
@@ -26,7 +31,7 @@ public class Farmer {
     }
 
     //gets specific tool
-    public Tool getTool(char id){
+    public Tool -getTool(char id){
         for(Tool t: this.toolList){
             if(t.getID() == id) return t;
         }

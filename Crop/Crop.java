@@ -1,6 +1,7 @@
+package Crop;
 import java.util.Random;
 
-public class Crop {
+public abstract class Crop {
     private String name; //name
     private char id; //single char id "code"
     private String type; //type of crop

@@ -1,22 +1,19 @@
-public class Tool {
-    private String name; //bruh
-    private char id; //index/id 
-    private int cost; //cost per use
-    private double xp; //xp
-    private int tileReq; //tiles it can be used on
-    private int tileChange; //tile tool makes it become
+import Tile;
 
-    public Tool(String name, char id, int cost, double xp, int tileReq, int tileChange){
-        this.name = name;
-        this.id = id;
-        this.cost = cost;
-        this.xp = xp;
-        this.tileReq = tileReq;
-        this.tileChange = tileChange;
+package Tool;
+public abstract class Tool {
+    protected String name; //bruh
+    protected char id; //index/id 
+    protected int cost; //cost per use
+    protected double xp; //xp
+    protected int tileReq; //tiles it can be used on
+    protected int tileChange; //tile tool makes it become
+
+    public Tool () {
     }
 
     //checks if the tool can be used depending on the status of the tile
-    public boolean tileCompatible(Tile tile){
+    public boolean tileCompatible (Tile tile){
         if(tile.getStatus() == this.tileReq) return true;
         if(this.name.equals("Shovel")) return true;
         if(tile.getStatus() > 1){
