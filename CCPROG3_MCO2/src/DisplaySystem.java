@@ -28,8 +28,11 @@ public class DisplaySystem extends Application {
     private Shovel shovel;
 
     public DisplaySystem(){
+    }
+
+    public DisplaySystem(int status[]){
         this.farmer = new Farmer();
-        //this.farm = new Farm(status);
+        this.farm = new Farm(status);
         this.day = 1;
 
         this.cropList = new ArrayList<Crop>();
@@ -356,8 +359,8 @@ public class DisplaySystem extends Application {
     @FXML
     void endDay(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        System.out.println("teststes");
-        //this.farm.nextDay();
+        System.out.println("teststes" + this.farm + " famrer" + this.farmer);
+        this.farm.nextDay();
         this.day++;
         GameDay.setText(""+this.day);
 
@@ -372,7 +375,7 @@ public class DisplaySystem extends Application {
 
     @FXML
     void registerFarmer(MouseEvent event) {
-        System.out.println("reg baby");
+        //registerFarmer();
     }
 
     Tool usetool = null;
@@ -452,9 +455,20 @@ public class DisplaySystem extends Application {
     }
 
     public static void main(String[] args){
+        int status[] = {1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1,
+            0, 1, 1, 0, 1,
+            1, 1, 1, 1, 0,
+            1, 1, 0, 1, 0,
+            1, 1, 0, 1, 1,
+            0, 0, 1, 1, 1 };
+
+        DisplaySystem d = new DisplaySystem(status);
+
         Application.launch(args);
-
-
     } 
 
 }
