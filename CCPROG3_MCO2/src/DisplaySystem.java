@@ -10,7 +10,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import javafx.stage.Modality;
 import javafx.scene.layout.VBox;
@@ -20,10 +21,15 @@ public class DisplaySystem extends Application {
     private Farmer farmer;
     private Farm farm;
     private int day;
+    private Plow plow;
+    private WateringCan wateringcan;
+    private Fertilizer fertilizer;
+    private Pickaxe pickaxe;
+    private Shovel shovel;
 
-    public DisplaySystem(int status[]){
+    public DisplaySystem(){
         this.farmer = new Farmer();
-        this.farm = new Farm(status);
+        //this.farm = new Farm(status);
         this.day = 1;
 
         this.cropList = new ArrayList<Crop>();
@@ -42,7 +48,19 @@ public class DisplaySystem extends Application {
         this.toolList.add(new Fertilizer());
         this.toolList.add(new Pickaxe());
         this.toolList.add(new Shovel());
+
+        this.plow = new Plow();
+        this.wateringcan = new WateringCan();
+        this.fertilizer = new Fertilizer();
+        this.pickaxe = new Pickaxe();
+        this.shovel = new Shovel();
     }
+
+    public Plow getPlow() { return this.plow; }
+    public WateringCan getWateringCan() { return this.wateringcan; }
+    public Fertilizer getFertilizer() { return this.fertilizer; }
+    public Pickaxe getPickaxe() { return this.pickaxe; }
+    public Shovel getShovel() { return this.shovel; }
 
     @Override 
     public void start (Stage stage) throws IOException {
@@ -56,6 +74,9 @@ public class DisplaySystem extends Application {
     }
 
     boolean check = false; 
+
+    /*@FXML
+    Alert inform = new Alert(AlertType.NONE);*/
 
     @FXML
     VBox vBox;
@@ -88,10 +109,11 @@ public class DisplaySystem extends Application {
     
 
     @FXML
-    public Tile clickTile (MouseEvent event, boolean check) throws IOException{
+    public int clickTile (MouseEvent event) throws IOException{
         ImageView source = (ImageView) event.getSource();
         Tile tile = null;
-        if (!check){
+        int result = 0;
+        if (!this.check){
             if (source.equals(Tile1)){
                 displayTileInfo (1,1);
             } else if (source.equals(Tile2)){
@@ -193,7 +215,7 @@ public class DisplaySystem extends Application {
             } else if (source.equals(Tile50)){
                 displayTileInfo (5,10);
             }
-        } else if (check){
+        } else if (this.check){ 
             if (source.equals(Tile1)){
                 tile = farm.getTile(1,1);
             } else if (source.equals(Tile2)){
@@ -295,7 +317,14 @@ public class DisplaySystem extends Application {
             } else if (source.equals(Tile50)){
                 tile = farm.getTile(5,10);
             }
+
+            result = farmer.useTool(usetool, tile);
+            return result;
         }
+
+        this.check = false;
+        return result;
+        //return tile;
     }
  
     public void displayTileInfo (int row, int col) throws IOException {
@@ -312,7 +341,9 @@ public class DisplaySystem extends Application {
 
     @FXML
     void endDay(MouseEvent event) {
-        System.out.println("pindot end");
+        this.farm.nextDay();
+        this.day++;
+        GameDay.setText(""+this.day);
     }
 
     @FXML
@@ -320,22 +351,39 @@ public class DisplaySystem extends Application {
         System.out.println("reg baby");
     }
 
+    Tool usetool = null;
+
     @FXML
-    void useTool(MouseEvent event) {
+    void useTool(MouseEvent event) throws IOException {
         ImageView source = (ImageView) event.getSource();
-        check = true;
+        this.check = true;
+        int result = 0;
 
         if (source.equals(WateringCan)){
-            System.out.println("water!");
+            usetool = this.getWateringCan();
         } else if (source.equals(Pickaxe)){
-            System.out.println("axe!");
+            usetool = this.getPickaxe();
         } else if (source.equals(Plow)){
-            System.out.println("plow");
+            usetool = this.getPlow();
         } else if (source.equals(Shovel)){
-            System.out.println("shovel");
+            usetool = this.getShovel();
         } else if (source.equals(Fertilizer)){
-            System.out.println("fertilizer!");
+            usetool = this.getFertilizer();
         }
+
+        //System.out.println(usetool + " : tool" + tile +" : tile");
+
+        //result = farmer.useTool(tool, tile);
+
+        /*if(result > 0){
+            System.out.println(usetool.getName() + " was successfully used.");
+            if(source.equals(WateringCan))
+            System.out.println("Tile Water Level: " + tile.getWater());
+            if(source.equals(Fertilizer))
+            System.out.println("Tile Fertilizer Level: " + tile.getFertilizer());
+        }
+        else
+        System.out.println(usetool.getName() + "was not able to be used.");*/
     }
 
     @FXML
