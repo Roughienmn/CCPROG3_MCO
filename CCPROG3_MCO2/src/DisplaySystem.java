@@ -38,7 +38,7 @@ public class DisplaySystem extends Application {
             Tile46, Tile47, Tile48, Tile49, Tile50; 
     
     @FXML
-    private ImageView farmerFace, endBtn, registerBtn;
+    private ImageView farmerFace, endBtn, registerBtn; 
 
     @FXML
     private Label PlayerCoins;
@@ -50,7 +50,7 @@ public class DisplaySystem extends Application {
     private ProgressBar ProgressBar;
 
     @FXML
-    private Label FarmerName;
+    private Label FarmerName; 
     
 
     @FXML
@@ -64,16 +64,16 @@ public class DisplaySystem extends Application {
 
     @FXML
     void endDay(MouseEvent event) {
-
+        System.out.println("pindot end");
     }
 
     @FXML
     void registerFarmer(MouseEvent event) {
-
+        System.out.println("reg baby");
     }
 
     public static void main(String[] args){
         Application.launch(args);
-    }
+    } 
 
 }
