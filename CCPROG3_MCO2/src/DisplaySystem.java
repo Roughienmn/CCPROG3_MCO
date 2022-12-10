@@ -1,8 +1,9 @@
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.event.*;
-import javafx.scene.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.application.Application;
@@ -26,7 +27,7 @@ public class DisplaySystem extends Application {
     VBox vBox;
 
     @FXML 
-    ImageView  Tile1, Tile2, Tile3, Tile4, Tile5, 
+    private ImageView  Tile1, Tile2, Tile3, Tile4, Tile5, 
             Tile6, Tile7, Tile8, Tile9, Tile10,
             Tile11, Tile12, Tile13, Tile14, Tile15,
             Tile16, Tile17, Tile18, Tile19, Tile20,
@@ -36,6 +37,21 @@ public class DisplaySystem extends Application {
             Tile36, Tile37, Tile38, Tile39, Tile40,
             Tile41, Tile42, Tile43, Tile44, Tile45, 
             Tile46, Tile47, Tile48, Tile49, Tile50; 
+    
+    @FXML
+    private ImageView farmerFace;
+
+    @FXML
+    private Label PlayerCoins;
+
+    @FXML
+    private Label PlayerLevel;
+
+    @FXML
+    private ProgressBar ProgressBar;
+
+    @FXML
+    private Label FarmerName;
 
     @FXML
     public void clickTile (MouseEvent event){
