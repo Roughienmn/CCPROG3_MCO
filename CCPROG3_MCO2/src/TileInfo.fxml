@@ -7,12 +7,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="583.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="196.0" prefWidth="583.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="197.0" prefWidth="565.0" style="-fx-background-color: #252935;">
          <children>
-            <Label layoutX="189.0" layoutY="25.0" prefHeight="52.0" prefWidth="354.0" text="Tile and Crop Information" textFill="WHITE">
+            <AnchorPane layoutX="15.0" layoutY="15.0" prefHeight="163.0" prefWidth="162.0" style="-fx-border-color: #FFFFFF;" />
+            <Label layoutX="189.0" layoutY="25.0" prefHeight="52.0" prefWidth="354.0" text="Tile Information" textFill="WHITE">
                <font>
                   <Font name="Agency FB" size="42.0" />
                </font>
@@ -67,7 +67,7 @@
                   <Font name="Agency FB" size="32.0" />
                </font>
             </Label>
-            <ImageView fitHeight="153.0" fitWidth="158.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="CropDP" fitHeight="153.0" fitWidth="158.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/DPCrops/Sunflower_DP.png" />
                </image>
@@ -75,35 +75,6 @@
             <ImageView fx:id="harvestBtn" fitHeight="52.0" fitWidth="138.0" layoutX="433.0" layoutY="118.0" onMouseClicked="#HarvestCrop" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Buttons/CantHarvest.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="267.0" prefWidth="583.0" style="-fx-background-color: #3f4556;">
-         <children>
-            <Label layoutX="19.0" layoutY="7.0" prefHeight="52.0" prefWidth="354.0" text="Tool Inventory" textFill="WHITE">
-               <font>
-                  <Font name="Agency FB" size="42.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="Fertilizer" fitHeight="87.0" fitWidth="73.0" layoutX="19.0" layoutY="65.0" onMouseClicked="#useTool" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/Tools/Fertilizer.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="Pickaxe" fitHeight="76.0" fitWidth="75.0" layoutX="89.0" layoutY="73.0" onMouseClicked="#useTool" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/Tools/Pickaxe.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="Fertilizer1" fitHeight="87.0" fitWidth="73.0" layoutX="183.0" layoutY="73.0" onMouseClicked="#useTool" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/Tools/Plow.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="Pickaxe1" fitHeight="76.0" fitWidth="75.0" layoutX="257.0" layoutY="84.0" onMouseClicked="#useTool" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/Tools/Shovel.png" />
                </image>
             </ImageView>
          </children>

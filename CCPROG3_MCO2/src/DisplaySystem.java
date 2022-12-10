@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.application.Application;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import javafx.stage.Stage;
 import javafx.scene.layout.VBox;
@@ -43,16 +44,10 @@ public class DisplaySystem extends Application {
                     Rose, Tulip, Sunflower, Turnip, Carrot, Potato, Mango, Apple; 
 
     @FXML
-    private Label PlayerCoins;
-
-    @FXML
-    private Label PlayerLevel;
+    private Label PlayerCoins, PlayerLevel, GameDay, FarmerName;
 
     @FXML
     private ProgressBar ProgressBar;
-
-    @FXML
-    private Label FarmerName; 
     
 
     @FXML
@@ -92,8 +87,15 @@ public class DisplaySystem extends Application {
     }
 
     @FXML
-    void displayStats (MouseEvent event) {
-        System.out.println("disp disp");
+    void displayStats (MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        FileInputStream farmerstream = new FileInputStream("C:\\Boo\\0_Codes\\CCPROG3_MCO\\CCPROG3_MCO2\\src\\FarmerInfo.fxml");
+        VBox fBox = (VBox) loader.load(farmerstream);
+        Scene fscreen = new Scene (fBox);
+
+        Stage farmerWindow = new Stage();
+        farmerWindow.setScene(fscreen);
+        farmerWindow.show();
     }
 
     @FXML
@@ -121,6 +123,8 @@ public class DisplaySystem extends Application {
 
     public static void main(String[] args){
         Application.launch(args);
+
+
     } 
 
 }
