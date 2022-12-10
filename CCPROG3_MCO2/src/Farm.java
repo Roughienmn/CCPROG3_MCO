@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * This class also stores and updates all Tile activity information.
  */
 public class Farm {
-    public ArrayList<Tile> tileList; /** This farm's tile storage. */
+    public ArrayList<Tile> tileList; //storage of tiles.
 
     /**
      * Constructor for class Farm.
