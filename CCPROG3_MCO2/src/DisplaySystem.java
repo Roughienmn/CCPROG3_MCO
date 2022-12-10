@@ -38,7 +38,7 @@ public class DisplaySystem extends Application {
             Tile46, Tile47, Tile48, Tile49, Tile50; 
     
     @FXML
-    private ImageView farmerFace;
+    private ImageView farmerFace, endBtn, registerBtn;
 
     @FXML
     private Label PlayerCoins;
@@ -51,6 +51,7 @@ public class DisplaySystem extends Application {
 
     @FXML
     private Label FarmerName;
+    
 
     @FXML
     public void clickTile (MouseEvent event){
@@ -59,6 +60,16 @@ public class DisplaySystem extends Application {
         if (source.equals(Tile9)){
             System.out.println("hebebehebhebehbe");
         }
+    }
+
+    @FXML
+    void endDay(MouseEvent event) {
+
+    }
+
+    @FXML
+    void registerFarmer(MouseEvent event) {
+
     }
 
     public static void main(String[] args){

@@ -324,12 +324,12 @@
                   <Font name="Agency FB" size="29.0" />
                </font>
             </Label>
-            <ImageView fitHeight="52.0" fitWidth="145.0" layoutX="730.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="endBtn" fitHeight="52.0" fitWidth="145.0" layoutX="730.0" layoutY="16.0" onMouseClicked="#endDay" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/Buttons/End%20Day.png" />
+                  <Image url="@Images/Buttons/EndDay.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="49.0" fitWidth="120.0" layoutX="605.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="registerBtn" fitHeight="49.0" fitWidth="120.0" layoutX="605.0" layoutY="20.0" onMouseClicked="#registerFarmer" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Buttons/Register.png" />
                </image>
