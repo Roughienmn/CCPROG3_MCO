@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
-public class Driver {
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class Driver extends Application {
     public static void main(String[] args){
+        DisplaySystem dp = new DisplaySystem();
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
         int status[] = {1, 1, 1, 1, 1,
@@ -85,5 +89,11 @@ public class Driver {
         }
         System.out.println("\nClosing Game...");
         scanner.close();
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        // TODO Auto-generated method stub
+        
     }
 }
