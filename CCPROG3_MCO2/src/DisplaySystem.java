@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import javafx.stage.Stage;
+import javafx.stage.Modality;
 import javafx.scene.layout.VBox;
 public class DisplaySystem extends Application {
     @Override 
@@ -41,10 +42,13 @@ public class DisplaySystem extends Application {
     @FXML
     private ImageView farmerFace, endBtn, registerBtn, MyStats,
                     Plow, WateringCan, Pickaxe, Fertilizer, Shovel,
-                    Rose, Tulip, Sunflower, Turnip, Carrot, Potato, Mango, Apple; 
+                    Rose, Tulip, Sunflower, Turnip, Carrot, Potato, Mango, Apple,
+                    FarmerDP, CropDP; 
 
     @FXML
-    private Label PlayerCoins, PlayerLevel, GameDay, FarmerName;
+    private Label PlayerCoins, PlayerLevel, GameDay, FarmerName,
+                FertilizerBonusInfo, WaterBonusInfo, ExperienceNum, CostReduction, BonusEarnings,
+                HarvestGrowth, WaterInfo, FertilizerInfo, CropType, CropName;
 
     @FXML
     private ProgressBar ProgressBar;
@@ -95,6 +99,7 @@ public class DisplaySystem extends Application {
 
         Stage farmerWindow = new Stage();
         farmerWindow.setScene(fscreen);
+        farmerWindow.initModality(Modality.WINDOW_MODAL);
         farmerWindow.show();
     }
 

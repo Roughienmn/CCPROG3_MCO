@@ -41,17 +41,17 @@
                   <Image url="@Images/FarmerStats/Fertilizer.png" />
                </image>
             </ImageView>
-            <Label fx:id="HarvestGrowth" layoutX="226.0" layoutY="123.0" prefHeight="39.0" prefWidth="33.0" text="0" textFill="WHITE">
+            <Label fx:id="ExperienceNum" layoutX="226.0" layoutY="123.0" prefHeight="39.0" prefWidth="33.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Agency FB" size="32.0" />
                </font>
             </Label>
-            <Label fx:id="WaterInfo" layoutX="336.0" layoutY="123.0" prefHeight="39.0" prefWidth="33.0" text="5" textFill="WHITE">
+            <Label fx:id="WaterBonusInfo" layoutX="336.0" layoutY="123.0" prefHeight="39.0" prefWidth="33.0" text="5" textFill="WHITE">
                <font>
                   <Font name="Agency FB" size="32.0" />
                </font>
             </Label>
-            <Label fx:id="FertilizerInfo" layoutX="410.0" layoutY="123.0" prefHeight="39.0" prefWidth="33.0" text="5" textFill="WHITE">
+            <Label fx:id="FertilizerBonusInfo" layoutX="410.0" layoutY="123.0" prefHeight="39.0" prefWidth="33.0" text="5" textFill="WHITE">
                <font>
                   <Font name="Agency FB" size="32.0" />
                </font>
@@ -61,7 +61,7 @@
                   <Font name="Agency FB" size="32.0" />
                </font>
             </Label>
-            <Label fx:id="CropType" layoutX="559.0" layoutY="75.0" prefHeight="39.0" prefWidth="33.0" text="0" textFill="WHITE">
+            <Label fx:id="CostReduction" layoutX="559.0" layoutY="75.0" prefHeight="39.0" prefWidth="33.0" text="0" textFill="WHITE">
                <font>
                   <Font name="Agency FB" size="32.0" />
                </font>
