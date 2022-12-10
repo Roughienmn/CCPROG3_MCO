@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="196.0" prefWidth="583.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DisplaySystem">
+   <children>
+      <AnchorPane prefHeight="197.0" prefWidth="565.0" style="-fx-background-color: #252935;">
+         <children>
+            <Label layoutX="189.0" layoutY="25.0" prefHeight="52.0" prefWidth="354.0" text="Farmer Information" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="42.0" />
+               </font>
+            </Label>
+            <Label layoutX="189.0" layoutY="75.0" prefHeight="39.0" prefWidth="162.0" text="Bonus Earnings:" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="32.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="52.0" fitWidth="33.0" layoutX="191.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/FarmerStats/Experience.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="BonusEarnings" layoutX="361.0" layoutY="75.0" prefHeight="39.0" prefWidth="33.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="32.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="59.0" fitWidth="63.0" layoutX="283.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/FarmerStats/Water.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="59.0" fitWidth="63.0" layoutX="353.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/FarmerStats/Fertilizer.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="ExperienceNum" layoutX="226.0" layoutY="123.0" prefHeight="39.0" prefWidth="33.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="WaterBonusInfo" layoutX="336.0" layoutY="123.0" prefHeight="39.0" prefWidth="33.0" text="5" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="FertilizerBonusInfo" layoutX="410.0" layoutY="123.0" prefHeight="39.0" prefWidth="33.0" text="5" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="394.0" layoutY="75.0" prefHeight="39.0" prefWidth="162.0" text="Cost Reduction:" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="CostReduction" layoutX="559.0" layoutY="75.0" prefHeight="39.0" prefWidth="33.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="32.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="FarmerDP" fitHeight="153.0" fitWidth="158.0" layoutX="20.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/FarmerBadge/Default.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="registerBtn" fitHeight="52.0" fitWidth="138.0" layoutX="444.0" layoutY="118.0" onMouseClicked="#registerFarmer" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Buttons/Register.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="16.0" layoutY="15.0" prefHeight="163.0" prefWidth="162.0" style="-fx-border-color: #FFFFFF;" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
