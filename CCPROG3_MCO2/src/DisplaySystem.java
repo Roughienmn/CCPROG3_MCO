@@ -38,7 +38,8 @@ public class DisplaySystem extends Application {
             Tile46, Tile47, Tile48, Tile49, Tile50; 
     
     @FXML
-    private ImageView farmerFace, endBtn, registerBtn; 
+    private ImageView farmerFace, endBtn, registerBtn,
+                    Plow, WateringCan, Pickaxe, Fertilizer, Shovel; 
 
     @FXML
     private Label PlayerCoins;
@@ -57,7 +58,7 @@ public class DisplaySystem extends Application {
     public void clickTile (MouseEvent event){
         ImageView source = (ImageView) event.getSource();
 
-        if (source.equals(Tile9)){
+        if (source.equals(Tile1)){
             System.out.println("hebebehebhebehbe");
         }
     }
@@ -70,6 +71,23 @@ public class DisplaySystem extends Application {
     @FXML
     void registerFarmer(MouseEvent event) {
         System.out.println("reg baby");
+    }
+
+    @FXML
+    void useTool(MouseEvent event) {
+        ImageView source = (ImageView) event.getSource();
+
+        if (source.equals(WateringCan)){
+            System.out.println("water!");
+        } else if (source.equals(Pickaxe)){
+            System.out.println("axe!");
+        } else if (source.equals(Plow)){
+            System.out.println("plow");
+        } else if (source.equals(Shovel)){
+            System.out.println("shovel");
+        } else if (source.equals(Fertilizer)){
+            System.out.println("fertilizer!");
+        }
     }
 
     public static void main(String[] args){
