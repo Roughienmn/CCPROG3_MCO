@@ -62,15 +62,29 @@ public class DisplaySystem extends Application {
     public Pickaxe getPickaxe() { return this.pickaxe; }
     public Shovel getShovel() { return this.shovel; }
 
+    FXMLLoader loader;
+
     @Override 
     public void start (Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
+        loader = new FXMLLoader();
         String path = "C:\\Boo\\0_Codes\\CCPROG3_MCO\\CCPROG3_MCO2\\src\\DisplaySystem.fxml";
         FileInputStream stream = new FileInputStream(path);
         vBox = (VBox) loader.load(stream);
         Scene screen = new Scene (vBox);
         stage.setScene(screen);
-        stage.show();
+        stage.show(); 
+
+        System.out.println("loader1" + loader);
+
+        
+        /*FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("C:\\Boo\\0_Codes\\CCPROG3_MCO\\CCPROG3_MCO2\\src\\DisplaySystem.fxml"));
+        VBox root = (VBox) loader.load();
+        
+        //create a new scene with root and set the stage
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();*/
     }
 
     boolean check = false; 
@@ -340,10 +354,20 @@ public class DisplaySystem extends Application {
     }
 
     @FXML
-    void endDay(MouseEvent event) {
-        this.farm.nextDay();
+    void endDay(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        System.out.println("teststes");
+        //this.farm.nextDay();
         this.day++;
         GameDay.setText(""+this.day);
+
+        String path = "C:\\Boo\\0_Codes\\CCPROG3_MCO\\CCPROG3_MCO2\\src\\DisplaySystem.fxml";
+        FileInputStream stream = new FileInputStream(path);
+        vBox = (VBox) loader.load(stream);
+
+        /*DisplaySystem controller = loader.getController();    
+        System.out.println("controller" + controller);
+        controller.GameDay.setText(""+this.day);*/
     }
 
     @FXML
