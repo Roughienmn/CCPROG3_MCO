@@ -76,9 +76,6 @@ public class DisplaySystem extends Application {
         Scene screen = new Scene (vBox);
         stage.setScene(screen);
         stage.show(); 
-
-        System.out.println("loader1" + loader);
-
         
         /*FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("C:\\Boo\\0_Codes\\CCPROG3_MCO\\CCPROG3_MCO2\\src\\DisplaySystem.fxml"));
@@ -359,7 +356,6 @@ public class DisplaySystem extends Application {
     @FXML
     void endDay(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        System.out.println("teststes" + this.farm + " famrer" + this.farmer);
         this.farm.nextDay();
         this.day++;
         GameDay.setText(""+this.day);
@@ -367,10 +363,6 @@ public class DisplaySystem extends Application {
         String path = "C:\\Boo\\0_Codes\\CCPROG3_MCO\\CCPROG3_MCO2\\src\\DisplaySystem.fxml";
         FileInputStream stream = new FileInputStream(path);
         vBox = (VBox) loader.load(stream);
-
-        /*DisplaySystem controller = loader.getController();    
-        System.out.println("controller" + controller);
-        controller.GameDay.setText(""+this.day);*/
     }
 
     @FXML
@@ -397,8 +389,6 @@ public class DisplaySystem extends Application {
         } else if (source.equals(Fertilizer)){
             usetool = this.getFertilizer();
         }
-
-        //System.out.println(usetool + " : tool" + tile +" : tile");
 
         //result = farmer.useTool(tool, tile);
 
@@ -451,7 +441,7 @@ public class DisplaySystem extends Application {
 
     @FXML
     void HarvestCrop(MouseEvent event) {
-        System.out.println("Harvest harvet");
+        System.out.println("HarvestCrop");
     }
 
     public static void main(String[] args){
