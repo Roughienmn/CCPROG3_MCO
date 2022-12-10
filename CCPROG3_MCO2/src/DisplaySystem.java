@@ -38,8 +38,9 @@ public class DisplaySystem extends Application {
             Tile46, Tile47, Tile48, Tile49, Tile50; 
     
     @FXML
-    private ImageView farmerFace, endBtn, registerBtn,
-                    Plow, WateringCan, Pickaxe, Fertilizer, Shovel; 
+    private ImageView farmerFace, endBtn, registerBtn, MyStats,
+                    Plow, WateringCan, Pickaxe, Fertilizer, Shovel,
+                    Rose, Tulip, Sunflower, Turnip, Carrot, Potato, Mango, Apple; 
 
     @FXML
     private Label PlayerCoins;
@@ -88,6 +89,34 @@ public class DisplaySystem extends Application {
         } else if (source.equals(Fertilizer)){
             System.out.println("fertilizer!");
         }
+    }
+
+    @FXML
+    void displayStats (MouseEvent event) {
+        System.out.println("disp disp");
+    }
+
+    @FXML
+    void plantSeed(MouseEvent event) {
+        ImageView source = (ImageView) event.getSource();
+
+        if (source.equals(Tulip)){
+            System.out.println("tulip");
+        } else if (source.equals(Rose)){
+            System.out.println("rose");
+        } else if (source.equals(Sunflower)){
+            System.out.println("sunf");
+        } else if (source.equals(Potato)){
+            System.out.println("potats");
+        } else if (source.equals(Turnip)){
+            System.out.println("turn");
+        } else if (source.equals(Carrot)){
+            System.out.println("car");
+        } else if (source.equals(Mango)){
+            System.out.println("man");
+        } else if (source.equals(Apple)){
+            System.out.println("apple");
+        } 
     }
 
     public static void main(String[] args){
