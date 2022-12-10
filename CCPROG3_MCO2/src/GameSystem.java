@@ -137,7 +137,7 @@ public class GameSystem {
             }
         }
         if(tile == null) System.out.println("Tile is out of bounds.");
-        if(seed == null && id != 'X') System.out.println("We don't have that seed.");
+        if(seed == null && id != 'Z') System.out.println("We don't have that seed.");
         
     }
 
@@ -181,7 +181,7 @@ public class GameSystem {
             else
                 System.out.println(tool.getName() + "was not able to be used.");
         }
-        else if(id != 'X') System.out.println("We don't have that tool.");
+        else if(id != 'Z') System.out.println("We don't have that tool.");
     }
 
     /**
@@ -243,7 +243,7 @@ public class GameSystem {
                     }
                 }
             }
-            System.out.println("[X] Back");
+            System.out.println("[Z] Back");
             this.inputPrompt();
         }
     }
@@ -260,7 +260,7 @@ public class GameSystem {
             for(Tool t: this.toolList){
                 if(t.tileCompatible(tile)) System.out.println("[" + t.getID() + "] " + t.getName() + " ($" + t.getCost() + ")");
             }
-            System.out.println("[X] Back");
+            System.out.println("[Z] Back");
             this.inputPrompt();
         }
     }
