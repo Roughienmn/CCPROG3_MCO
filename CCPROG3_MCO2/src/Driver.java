@@ -1,24 +1,27 @@
+import java.io.FileReader;
 import java.util.Scanner;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
+public class Driver {
 
-public class Driver extends Application {
     public static void main(String[] args){
-        DisplaySystem dp = new DisplaySystem();
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
-        int status[] = {1, 1, 1, 1, 1,
-                        1, 1, 1, 1, 1,
-                        1, 1, 1, 1, 1,
-                        1, 1, 1, 1, 1,
-                        1, 1, 1, 1, 1,
-                        0, 1, 1, 0, 1,
-                        1, 1, 1, 1, 0,
-                        1, 1, 0, 1, 0,
-                        1, 1, 0, 1, 1,
-                        0, 0, 1, 1, 1};
+        int status[] = new int[50];
+        char[] array = new char[50];
 
+        try {
+            FileReader input = new FileReader("Rock.txt");
+            input.read(array);
+            input.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+        }
+
+        for (int i = 0; i<50; i++){
+            status[i] = Character.getNumericValue(array[i]);
+        }
+              
         while(!exit){
         System.out.println("\nMy Farm");
         System.out.println("[1] Start");
@@ -89,11 +92,5 @@ public class Driver extends Application {
         }
         System.out.println("\nClosing Game...");
         scanner.close();
-    }
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        // TODO Auto-generated method stub
-        
     }
 }
