@@ -1,9 +1,8 @@
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.event.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.*;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.application.Application;

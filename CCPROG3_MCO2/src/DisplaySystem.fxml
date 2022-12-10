@@ -293,37 +293,47 @@
                   <Image url="@Images/Farmer%20Types%20(Badge)/Default.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="32.0" fitWidth="34.0" layoutX="617.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="32.0" fitWidth="34.0" layoutX="673.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Farmer%20Stats/Coins.png" />
                </image>
             </ImageView>
-            <Label fx:id="PlayerCoins" layoutX="653.0" layoutY="29.0" text="50" textFill="WHITE">
+            <Label fx:id="PlayerCoins" layoutX="709.0" layoutY="77.0" text="50" textFill="WHITE">
                <font>
-                  <Font name="Courier New Bold" size="29.0" />
+                  <Font name="Agency FB Bold" size="29.0" />
                </font>
             </Label>
-            <ImageView fitHeight="32.0" fitWidth="34.0" layoutX="698.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="32.0" fitWidth="34.0" layoutX="754.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Farmer%20Stats/Experience.png" />
                </image>
             </ImageView>
-            <Label fx:id="PlayerLevel" layoutX="736.0" layoutY="29.0" text="Lvl. 0" textFill="WHITE">
+            <Label fx:id="PlayerLevel" layoutX="792.0" layoutY="77.0" text="Lvl. 0" textFill="WHITE">
                <font>
-                  <Font name="Courier New Bold" size="29.0" />
+                  <Font name="Agency FB Bold" size="29.0" />
                </font>
             </Label>
             <ProgressBar fx:id="ProgressBar" layoutX="154.0" layoutY="79.0" prefHeight="32.0" prefWidth="220.0" progress="0.0" />
             <Label fx:id="FarmerName" layoutX="154.0" layoutY="14.0" text="Unregistered" textFill="WHITE">
                <font>
-                  <Font name="Courier New Italic" size="29.0" />
+                  <Font name="Agency FB Bold" size="29.0" />
                </font>
             </Label>
-            <Label layoutX="154.0" layoutY="40.0" text="Farmer" textFill="WHITE">
+            <Label layoutX="154.0" layoutY="43.0" text="Farmer" textFill="WHITE">
                <font>
-                  <Font name="Courier New" size="29.0" />
+                  <Font name="Agency FB" size="29.0" />
                </font>
             </Label>
+            <ImageView fitHeight="52.0" fitWidth="145.0" layoutX="730.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Buttons/End%20Day.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="49.0" fitWidth="120.0" layoutX="605.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Buttons/Register.png" />
+               </image>
+            </ImageView>
          </children>
     </AnchorPane>
   </children>
