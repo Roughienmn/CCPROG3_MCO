@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="848.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DisplaySystem">
+  <children>
+    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="848.0" prefWidth="982.0" style="-fx-background-color: #252935;" VBox.vgrow="ALWAYS">
+         <children>
+            <GridPane hgap="10.0" layoutX="41.0" layoutY="153.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#clickTile" prefHeight="675.0" prefWidth="634.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fx:id="Tile1" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile2" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile3" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile4" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile5" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile10" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile9" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile8" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile6" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile7" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile20" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile19" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile18" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile17" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile16" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile15" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile14" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile13" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile12" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile11" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile40" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile39" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile38" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile37" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile36" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile35" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile34" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile33" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile32" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile31" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile30" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile29" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile28" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile27" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile26" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile25" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile24" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile23" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile22" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile21" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile50" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile49" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile48" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile47" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile46" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile45" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile44" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile43" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile42" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Tile41" fitHeight="65.0" fitWidth="125.0" onMouseClicked="#clickTile" pickOnBounds="true" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@Images/Tiles/Unplowed.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </GridPane>
+            <ImageView fx:id="farmerFace" fitHeight="97.0" fitWidth="97.0" layoutX="39.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/FarmerBadge/Default.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="PlayerCoins" layoutX="855.0" layoutY="84.0" text="50" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="PlayerLevel" layoutX="938.0" layoutY="84.0" text="Lvl. 0" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB Bold" size="29.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="ProgressBar" layoutX="154.0" layoutY="89.0" prefHeight="32.0" prefWidth="220.0" progress="0.0" />
+            <Label fx:id="FarmerName" layoutX="154.0" layoutY="24.0" text="Unregistered" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB Bold" size="29.0" />
+               </font>
+            </Label>
+            <Label layoutX="154.0" layoutY="53.0" text="Farmer" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="29.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="32.0" fitWidth="34.0" layoutX="819.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/FarmerStats/Coins.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="34.0" layoutX="900.0" layoutY="86.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/FarmerStats/Experience.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="endBtn" fitHeight="52.0" fitWidth="145.0" layoutX="878.0" layoutY="26.0" onMouseClicked="#endDay" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Buttons/EndDay.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="711.0" layoutY="191.0" prefHeight="52.0" prefWidth="207.0" text="Tool Inventory" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="42.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="FarmerStats" layoutX="36.0" layoutY="21.0" onMouseClicked="#displayStats" prefHeight="103.0" prefWidth="103.0" style="-fx-border-color: #FFFFFF;" />
+            <AnchorPane layoutX="711.0" layoutY="249.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Fertilizer" fitHeight="77.0" fitWidth="61.0" layoutX="16.0" layoutY="5.0" onMouseClicked="#useTool" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Tools/Fertilizer.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="807.0" layoutY="249.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Plow" fitHeight="74.0" fitWidth="68.0" layoutX="9.0" layoutY="8.0" onMouseClicked="#useTool" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Tools/Plow.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="903.0" layoutY="249.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Pickaxe" fitHeight="72.0" fitWidth="69.0" layoutX="11.0" layoutY="10.0" onMouseClicked="#useTool" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Tools/Pickaxe.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="711.0" layoutY="345.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Shovel" fitHeight="76.0" fitWidth="75.0" layoutX="8.0" layoutY="11.0" onMouseClicked="#useTool" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Tools/Shovel.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="807.0" layoutY="345.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="WateringCan" fitHeight="87.0" fitWidth="73.0" layoutX="7.0" layoutY="13.0" onMouseClicked="#useTool" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Tools/WateringCan.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label layoutX="711.0" layoutY="448.0" prefHeight="52.0" prefWidth="207.0" text="Seeds" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB" size="42.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="711.0" layoutY="514.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Sunflower" fitHeight="87.0" fitWidth="73.0" layoutX="7.0" layoutY="7.0" onMouseClicked="#plantSeed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Seeds/Sunflower.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="807.0" layoutY="514.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Rose" fitHeight="87.0" fitWidth="73.0" layoutX="7.0" layoutY="7.0" onMouseClicked="#plantSeed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Seeds/Rose.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="902.0" layoutY="514.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Tulip" fitHeight="87.0" fitWidth="73.0" layoutX="7.0" layoutY="7.0" onMouseClicked="#plantSeed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Seeds/Tulip.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="711.0" layoutY="609.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Potato" fitHeight="87.0" fitWidth="73.0" layoutX="7.0" layoutY="7.0" onMouseClicked="#plantSeed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Seeds/Potato.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="807.0" layoutY="609.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Carrot" fitHeight="87.0" fitWidth="73.0" layoutX="7.0" layoutY="7.0" onMouseClicked="#plantSeed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Seeds/Carrot.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="902.0" layoutY="609.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Turnip" fitHeight="87.0" fitWidth="73.0" layoutX="7.0" layoutY="7.0" onMouseClicked="#plantSeed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Seeds/Turnip.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="711.0" layoutY="704.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Apple" fitHeight="87.0" fitWidth="73.0" layoutX="7.0" layoutY="7.0" onMouseClicked="#plantSeed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Seeds/Apple.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="807.0" layoutY="704.0" prefHeight="87.0" prefWidth="86.0" style="-fx-border-color: #FFFFFF;">
+               <children>
+                  <ImageView fx:id="Mango" fitHeight="87.0" fitWidth="73.0" layoutX="7.0" layoutY="7.0" onMouseClicked="#plantSeed" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/Seeds/Mango.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label fx:id="GameDay" layoutX="850.0" layoutY="34.0" text="1" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB Bold" size="29.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="32.0" fitWidth="34.0" layoutX="814.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/FarmerStats/Calendar.png" />
+               </image>
+            </ImageView>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
